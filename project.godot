@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="alien-game"
-run/main_scene="res://Scenes/farm_game.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/name="Bloorp Zingle"
+run/main_scene="uid://igascktdmxry"
+config/features=PackedStringArray("4.4", "Mobile")
 
 [input]
 
@@ -34,5 +34,5 @@ jump={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
+renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="gl_compatibility"

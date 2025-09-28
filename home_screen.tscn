@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://0byd63jxokva"]
+
+[ext_resource type="Texture2D" uid="uid://c5laxcjk2llpq" path="res://Monica Assets/Background screens/Menu screen.png" id="1_olt8n"]
+[ext_resource type="Script" uid="uid://cya0oc8xwnj1j" path="res://play_button.gd" id="2_ktig4"]
+
+[sub_resource type="Theme" id="Theme_olt8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktig4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_outur"]
+
+[node name="Home Screen" type="Control"]
+layout_mode = 3
+anchor_right = 0.914
+anchor_bottom = 0.744
+offset_left = 56.0
+offset_top = 53.0
+offset_right = 131.072
+offset_bottom = 206.888
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HomeScreen" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(520, 269)
+scale = Vector2(0.897656, 0.897222)
+texture = ExtResource("1_olt8n")
+
+[node name="PlayButton" type="Button" parent="HomeScreen"]
+offset_left = -187.154
+offset_top = -123.715
+offset_right = 268.477
+offset_bottom = 6.6873
+theme = SubResource("Theme_olt8n")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ktig4")
+script = ExtResource("2_ktig4")
+
+[node name="StoryButton" type="Button" parent="HomeScreen/PlayButton"]
+layout_mode = 0
+offset_left = -10.0261
+offset_top = 209.536
+offset_right = 445.605
+offset_bottom = 342.167
+theme_override_styles/normal = SubResource("StyleBoxEmpty_outur")
+
+[connection signal="pressed" from="HomeScreen/PlayButton" to="HomeScreen/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="HomeScreen/PlayButton/StoryButton" to="HomeScreen/PlayButton" method="_on_story_button_pressed"]

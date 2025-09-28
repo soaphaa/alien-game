@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ku6r4rtif25"]
+
+[ext_resource type="Texture2D" uid="uid://wxigp5gaioie" path="res://Monica Assets/Background screens/titleScreen.png" id="2_ak2if"]
+[ext_resource type="Script" path="res://title_screen_bg.gd" id="2_ig5kc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05l2w"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TitleScreenBG" type="Sprite2D" parent="."]
+position = Vector2(575.25, 324.5)
+scale = Vector2(0.899609, 0.895833)
+script = ExtResource("2_ig5kc")
+
+[node name="TitleScreen" type="Sprite2D" parent="TitleScreenBG"]
+position = Vector2(0.277893, 0.558167)
+scale = Vector2(0.997829, 1.00465)
+texture = ExtResource("2_ak2if")
+
+[node name="StartButton" type="Button" parent="TitleScreenBG/TitleScreen"]
+offset_left = -271.0
+offset_top = 211.0
+offset_right = 261.0
+offset_bottom = 293.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_05l2w")
+
+[connection signal="pressed" from="TitleScreenBG/TitleScreen/StartButton" to="TitleScreenBG" method="_on_start_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmnqcug5l6364"]
+
+[ext_resource type="Texture2D" uid="uid://xovl5mcv5brl" path="res://Monica Assets/Background screens/Alien ending 1.png" id="1_gv2ak"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AlienEnding1" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_gv2ak")

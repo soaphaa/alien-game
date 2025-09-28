@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://yeoyb8hbjxan"]
+
+[ext_resource type="Texture2D" uid="uid://1tf70prq5twl" path="res://Monica Assets/Background screens/story.png" id="1_b4in8"]
+[ext_resource type="Script" path="res://story_back_button.gd" id="2_lbdh4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b4in8"]
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Story" type="Sprite2D" parent="."]
+position = Vector2(575, 324.5)
+scale = Vector2(0.896875, 0.901389)
+texture = ExtResource("1_b4in8")
+
+[node name="StoryBackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 169.0
+offset_bottom = 91.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b4in8")
+script = ExtResource("2_lbdh4")
+
+[connection signal="pressed" from="StoryBackButton" to="StoryBackButton" method="_on_pressed"]
