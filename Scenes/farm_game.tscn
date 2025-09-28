@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://igascktdmxry"]
+[gd_scene load_steps=8 format=3 uid="uid://igascktdmxry"]
 
 [ext_resource type="Script" uid="uid://b5i5hvlku3khe" path="res://Scenes/farm_game.gd" id="1_r5b05"]
 [ext_resource type="PackedScene" uid="uid://dln1p0gc4ymuy" path="res://Scenes/bg.tscn" id="1_t33v0"]
 [ext_resource type="PackedScene" uid="uid://8f3dqwiebp1q" path="res://Scenes/ground.tscn" id="2_r5b05"]
 [ext_resource type="PackedScene" uid="uid://dm88ji3yg37w4" path="res://Scenes/alien.tscn" id="3_i6jho"]
 [ext_resource type="PackedScene" uid="uid://1v6mj70aeufu" path="res://Scenes/how_to_play.tscn" id="5_i6jho"]
+[ext_resource type="FontFile" uid="uid://k64lmc7tb1fv" path="res://Assets/fonts/pixel_maz.ttf" id="6_he7hy"]
+[ext_resource type="Script" uid="uid://dnsg1a1v6dyj1" path="res://Scenes/next.gd" id="7_ajkqn"]
 
 [node name="farm-game" type="Node"]
 script = ExtResource("1_r5b05")
@@ -21,3 +23,24 @@ position = Vector2(576, 324)
 scale = Vector2(1e-05, 1e-05)
 
 [node name="HowToPlay" parent="." instance=ExtResource("5_i6jho")]
+
+[node name="Next" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = 3.0
+offset_right = 158.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_hover_pressed_color = Color(0.218945, 0.613852, 0.28512, 1)
+theme_override_fonts/font = ExtResource("6_he7hy")
+theme_override_font_sizes/font_size = 75
+text = "NEXT "
+script = ExtResource("7_ajkqn")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Next" to="Next" method="_on_pressed"]

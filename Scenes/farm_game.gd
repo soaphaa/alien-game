@@ -24,6 +24,7 @@ var lastobs
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_window().size
+	#$minigame1_ending.get_node("Next").pressed.connect(new_game) #restart condition
 	new_game()
 	pass # Replace with function body.
 
@@ -36,6 +37,8 @@ func new_game():
 	$alien.velocity = Vector2i(0,0)
 	$Camera2D.position = Vector2(CAM_START_POS)
 	$ground.position = Vector2i(0,0)
+	
+	$"Next".visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,7 +58,9 @@ func _process(delta):
 			obs.position.x -= speed
 		
 		if score >= 1000: 
-			game_running = false;
+			game_running = false
+			$"Next".visible = true
+			get_tree().change_scene_to_file("res://main_map2.tscn")
 		else: score += speed
 		show_score()
 		
@@ -89,11 +94,26 @@ func generate_obs():
 	
 func add_obs(obs, x, y):
 	obs.position = Vector2i(x, y)
+	obs.body_entered.connect(hit_obs)
 	# add to scene and track
 	lastobs = obs
 	add_child(obs)
 	obstacles.append(obs)
 	
-		
+func hit_obs(body):
+	if body.name == "alien":
+		print("collision")
+
 func show_score():
 	$HowToPlay.get_node("scoreLabel").text = "SCORE: " + str(score)
+
+func game_over():
+	get_tree().paused = true
+	game_running = false
+	$"Next".visible = true
+
+
+	
+func win():
+	game_running = false	
+	$"Next".visible = true

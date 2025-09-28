@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b18nk1t70q2mv"]
+
+[ext_resource type="FontFile" uid="uid://k64lmc7tb1fv" path="res://Assets/fonts/pixel_maz.ttf" id="1_sj5wc"]
+[ext_resource type="Script" uid="uid://dnsg1a1v6dyj1" path="res://Scenes/next.gd" id="2_jtmjg"]
+
+[node name="minigame-1-end" type="CanvasLayer"]
+process_mode = 2
+
+[node name="Restart" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -30.5
+offset_right = 153.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_hover_color = Color(0.842809, 0.257242, 0.37137, 1)
+theme_override_fonts/font = ExtResource("1_sj5wc")
+theme_override_font_sizes/font_size = 75
+text = "RESTART"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 55.0
+offset_right = 155.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_hover_pressed_color = Color(0.218945, 0.613852, 0.28512, 1)
+theme_override_fonts/font = ExtResource("1_sj5wc")
+theme_override_font_sizes/font_size = 75
+text = "NEXT "
+script = ExtResource("2_jtmjg")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Next" to="Next" method="_on_pressed"]
