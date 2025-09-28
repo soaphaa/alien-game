@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3ynq8mhrda3e"]
+[gd_scene load_steps=4 format=3 uid="uid://d3ynq8mhrda3e"]
 
 [ext_resource type="Texture2D" uid="uid://d2jai6412vfqs" path="res://Monica Assets/Background screens/Main map.png" id="1_fex2t"]
 [ext_resource type="Texture2D" uid="uid://bp06nv1nvn8cb" path="res://Monica Assets/Background screens/alien.png" id="2_0mlqp"]
+[ext_resource type="Script" uid="uid://bwhivpsv1mx12" path="res://secret_escape_button.gd" id="2_k0ooc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,8 +23,11 @@ offset_top = 178.328
 offset_right = 294.7
 offset_bottom = 245.201
 text = "Start Level 2"
+script = ExtResource("2_k0ooc")
 
 [node name="Alien" type="Sprite2D" parent="MainMap"]
 position = Vector2(98.9748, 42.353)
 scale = Vector2(0.216653, 0.174784)
 texture = ExtResource("2_0mlqp")
+
+[connection signal="pressed" from="MainMap/SecretEscapeButton" to="MainMap/SecretEscapeButton" method="_on_pressed"]
