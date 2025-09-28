@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Bloorp Zingle"
-run/main_scene="uid://igascktdmxry"
-config/features=PackedStringArray("4.4", "Mobile")
+run/main_scene="uid://du3ko0alj6uw0"
+config/features=PackedStringArray("4.5", "Mobile")
 
 [input]
 
