@@ -1,0 +1,158 @@
+[gd_scene load_steps=23 format=3 uid="uid://h163n4p8upno"]
+
+[ext_resource type="Texture2D" uid="uid://c4griagqphvg6" path="res://Assets/img/obstacles-imgs/Chicken.png" id="1_weeo4"]
+[ext_resource type="Texture2D" uid="uid://cksfqyh6irh8o" path="res://Assets/img/obstacles-imgs/Cow.png" id="2_trb4n"]
+[ext_resource type="Texture2D" uid="uid://5cokycu3ay4m" path="res://Assets/img/obstacles-imgs/Pig.png" id="3_up51x"]
+[ext_resource type="Texture2D" uid="uid://bkdjsvva3q0rx" path="res://Assets/img/obstacles-imgs/Sheep.png" id="4_uvsf8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v61it"]
+atlas = ExtResource("1_weeo4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayb82"]
+atlas = ExtResource("1_weeo4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8omg"]
+atlas = ExtResource("1_weeo4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7cvt"]
+atlas = ExtResource("1_weeo4")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7u4x"]
+atlas = ExtResource("2_trb4n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11hol"]
+atlas = ExtResource("2_trb4n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_telb0"]
+atlas = ExtResource("2_trb4n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xuil"]
+atlas = ExtResource("2_trb4n")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpjsd"]
+atlas = ExtResource("3_up51x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w64pi"]
+atlas = ExtResource("3_up51x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw317"]
+atlas = ExtResource("3_up51x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dql75"]
+atlas = ExtResource("3_up51x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmcao"]
+atlas = ExtResource("4_uvsf8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkcd2"]
+atlas = ExtResource("4_uvsf8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k40br"]
+atlas = ExtResource("4_uvsf8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok3ue"]
+atlas = ExtResource("4_uvsf8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5kig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v61it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayb82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8omg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7cvt")
+}],
+"loop": true,
+"name": &"chicken",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7u4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11hol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_telb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xuil")
+}],
+"loop": true,
+"name": &"cow",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpjsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w64pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw317")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dql75")
+}],
+"loop": true,
+"name": &"pig",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmcao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkcd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k40br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok3ue")
+}],
+"loop": true,
+"name": &"sheep",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weeo4"]
+size = Vector2(43, 48)
+
+[node name="Obstacles" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_p5kig")
+animation = &"chicken"
+autoplay = "chicken"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_weeo4")

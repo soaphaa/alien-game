@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm88ji3yg37w4"]
+
+[ext_resource type="Script" uid="uid://blabxewy0x14w" path="res://Scenes/Script/alien.gd" id="1_fhrgm"]
+[ext_resource type="Texture2D" uid="uid://c0unrf1karcvc" path="res://Assets/img/alien-spritesheet.png" id="1_mdm8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhrgm"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(0, 0, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26noy"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(1704, 481, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sw17"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(284, 0, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f320"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(568, 0, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s84hg"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(852, 0, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhb2l"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(1136, 0, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k27ix"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(1420, 0, 284, 481)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb26l"]
+atlas = ExtResource("1_mdm8w")
+region = Rect2(1704, 0, 284, 481)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjurw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhrgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26noy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sw17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f320")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s84hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhb2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k27ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb26l")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56v5a"]
+size = Vector2(66, 139)
+
+[node name="alien" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_fhrgm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_kjurw")
+animation = &"run"
+autoplay = "idle"
+
+[node name="RunCol" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_56v5a")

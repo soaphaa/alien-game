@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dln1p0gc4ymuy"]
+
+[ext_resource type="Texture2D" uid="uid://d0amrs8q5m5h2" path="res://Assets/img/farm-background.png" id="1_sjcup"]
+
+[node name="bg" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sjcup")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_sjcup")
+centered = false

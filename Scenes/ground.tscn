@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://8f3dqwiebp1q"]
+
+[ext_resource type="Texture2D" uid="uid://cl4h6ny3bcbls" path="res://Assets/img/farm-platform.png" id="1_688p1"]
+[ext_resource type="Texture2D" uid="uid://b7nqldv4oxgs6" path="res://Assets/img/farm-top-platform.png" id="2_oltiy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oltiy"]
+size = Vector2(2199, 186)
+
+[node name="ground" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 494)
+scale = Vector2(1.71406, 1)
+texture = ExtResource("1_688p1")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1100.5, 578)
+shape = SubResource("RectangleShape2D_oltiy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(1.71406, 0.964286)
+texture = ExtResource("2_oltiy")
+centered = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1101, 110)
+shape = SubResource("RectangleShape2D_oltiy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1101, 110)
+shape = SubResource("RectangleShape2D_oltiy")
