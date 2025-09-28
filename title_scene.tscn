@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://du3ko0alj6uw0"]
+[gd_scene load_steps=4 format=3 uid="uid://p20sf5p0m2v"]
 
 [ext_resource type="Script" path="res://title_screen_bg.gd" id="1_176dl"]
 [ext_resource type="Texture2D" uid="uid://wxigp5gaioie" path="res://Monica Assets/Background screens/titleScreen.png" id="2_8vtwa"]
